@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "964051486367",
+    "project_id": "farm-animal-manager",
+    "storage_bucket": "farm-animal-manager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964051486367:android:089fa4039c208f85e684aa",
+        "android_client_info": {
+          "package_name": "com.example.farm_animals_manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964051486367-h0tthpnivhe42858davf49hf3pdffvpr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK16xtABmhCZsT_HYbzmOhU2mLzh723j0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964051486367-h0tthpnivhe42858davf49hf3pdffvpr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
