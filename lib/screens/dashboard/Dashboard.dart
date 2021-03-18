@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -9,6 +8,8 @@ import 'DashboardItem.dart';
 
 import '../../components/Drawer.dart';
 import '../../components/ModalOptions.dart';
+
+import '../../components/buildPopupMenuItem.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -114,15 +115,24 @@ class _DashboardState extends State<Dashboard> {
                 // Database.deleteAnimal(widget.animal.id);
               }
             },
-            // child: Text("Report"),
             icon: Icon(Icons.report),
             itemBuilder: (BuildContext context) => [
-              // R(),
-              buildPopupMenuItem(menuIcon: Icons.power_off, menuValue: "castration", menuText: "Castration"),
-              buildPopupMenuItem(menuIcon: Icons.explore_off, menuValue: "death", menuText: "Death"),
-              buildPopupMenuItem(menuIcon: Icons.exit_to_app, menuValue: "sell", menuText: "Sell"),
-              buildPopupMenuItem(menuIcon: Icons.post_add, menuValue: "birth", menuText: "Birth"),
-
+              buildPopupMenuItem(
+                  menuIcon: Icons.power_off,
+                  menuValue: "castration",
+                  menuText: "Castration"),
+              buildPopupMenuItem(
+                  menuIcon: Icons.explore_off,
+                  menuValue: "death",
+                  menuText: "Death"),
+              buildPopupMenuItem(
+                  menuIcon: Icons.exit_to_app,
+                  menuValue: "sell",
+                  menuText: "Sell"),
+              buildPopupMenuItem(
+                  menuIcon: Icons.post_add,
+                  menuValue: "birth",
+                  menuText: "Birth"),
             ],
           ),
         ],
@@ -156,21 +166,4 @@ class _DashboardState extends State<Dashboard> {
       ),
     );
   }
-
-  PopupMenuItem<String> buildPopupMenuItem({String menuText, String menuValue, IconData menuIcon}) {
-    return PopupMenuItem(
-              value: "$menuValue",
-              child: Row(
-                children: [
-                  Icon(
-                    menuIcon,
-                    color: Colors.black,
-                  ),
-                  SizedBox(width: 10),
-                  Text("$menuText"),
-                ],
-              ),
-            );
-  }
 }
-

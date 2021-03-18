@@ -1,13 +1,14 @@
+import 'package:farm_animals_manager/components/animalDetails/ImageSection.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import '../components/animal/AnimalDetails.dart';
-import '../components/matingAndBreeding/MatingList.dart';
-import '../components/matingAndBreeding/BreedingList.dart';
+import '../../components/animalDetails/AnimalDetails.dart';
+import '../../components/matingAndBreeding/MatingList.dart';
+import '../../components/matingAndBreeding/BreedingList.dart';
 
-import '../screens/AddEditMatingScreen.dart';
-import '../screens/AddEditBreedingScreen.dart';
+import '../AddEditMatingScreen.dart';
+import '../AddEditBreedingScreen.dart';
 
 class AnimalDetailsScreen extends StatelessWidget {
   final QueryDocumentSnapshot animal;
@@ -37,6 +38,8 @@ class AnimalDetailsScreen extends StatelessWidget {
             children: [
               SizedBox(height: 10),
               // Image section
+              ImageSection(animal: animal),
+              // animal details
               AnimalDetails(animal: animal),
               SizedBox(height: 10),
 

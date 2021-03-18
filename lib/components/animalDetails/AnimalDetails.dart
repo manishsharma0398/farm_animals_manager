@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class AnimalDetails extends StatelessWidget {
   final QueryDocumentSnapshot animal;
@@ -43,43 +42,6 @@ class AnimalDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Center(
-          child: Stack(
-            children: <Widget>[
-              CircleAvatar(
-                radius: 70,
-                child: ClipOval(
-                  child: CachedNetworkImage(
-                    imageUrl: animal["imageUrl"],
-                    placeholder: (context, url) => CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => Icon(Icons.error),
-                    height: 150,
-                    width: 150,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Positioned(
-                bottom: 1,
-                right: 1,
-                child: Container(
-                  height: 40,
-                  width: 40,
-                  child: Icon(
-                    Icons.add_a_photo,
-                    color: Colors.white,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.deepOrange,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
-        ),
         SizedBox(height: 10),
         _buildChips(
           key: "Name",

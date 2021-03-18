@@ -10,27 +10,38 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-          body: Container(
-            width: MediaQuery.of(context).size.width,
-            child: Column(
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset("assets/images/auth.png"),
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset("assets/images/auth.png"),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
                 Container(
                   child: Text("Auth Page"),
                 ),
-                RaisedButton(onPressed: () {
-                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => Dashboard()), (route) => false);
-                }, child: Text("Go to dashboard", style: TextStyle(color: Colors.white),), color: Colors.amber,),
-        ],
-      ),
+                RaisedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(
+                          builder: (context) => Dashboard(),
+                        ),
+                        (route) => false);
+                  },
+                  child: Text(
+                    "Go to dashboard",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  color: Colors.amber,
+                ),
               ],
             ),
-          ),
+          ],
+        ),
+      ),
     );
   }
 }
